@@ -41,6 +41,7 @@ h1, h2,h3, h4, h5, h6, p {
     margin: 0 auto;
     width: 1200px;
     padding: 0 15px;
+    box-sizing: border-box;
     /*outline: 2px solid teal;*/
 }
 button {
@@ -48,19 +49,20 @@ button {
 }
 
 /*nav*/ 
-.header {
+.header.container {
     display: flex;
     align-items: center;
+   justify-items: space-between;
 
 }
 .main-nav{
     display: flex;
     align-items: center;
-    
+  
 }
-
 /*logo*/
 .logo {
+
     color: #2196f3;
 
     font-family: Raleway, sant-serif;
@@ -136,7 +138,6 @@ margin-left: 50px;
 .hero-title {
     color: var(--white-color);
 
-   
     margin-bottom: 40px;
     /*outline: 2px solid teal ;*/
 
@@ -210,15 +211,14 @@ text-transform: uppercase;
         display: flex;
         flex-wrap: wrap;
       /* margin: -15;*/
-
     }
 .advantages-item{
     /*width: 270px*/
-    width: calc(( 100% - 120px )/4);
-    margin-right: 30 px;
+    width: calc(( 100% - 90px )/4);
+   margin-right: 30px;
 }
 
-.advantages-item:nth-child(4n)
+.advantages-item:nth-child(4n) 
 {
     margin-right: 0;
 }
@@ -229,16 +229,14 @@ text-transform: uppercase;
 }
 .work-list {
 display: flex;
-margin: -15px;
 }
 .work-item {
-    margin-right: 30px;
-    width: calc(( 100% - 90px )/3);
+    width: calc(( 100% - 60px )/3);
     
 }
-.work-item:nth-child(4n)
+.work-item:not(:nth-child(3n)) /*not:(nth-child(4n))*/
 {
-    margin-right: 0;
+    margin-right: 30px;
 }
 /*.work-item:
   team description*/
@@ -251,7 +249,7 @@ margin: -15px;
 
 .team-item{
     margin-right: 30px;
-   width: calc(( 100% - 120px )/4);
+   width: calc(( 100% - 90px )/4);
     text-align: center;
 
     background-color: var(--white-color);
@@ -299,9 +297,9 @@ margin: -15px;
     .address-link {
         color: var(--white-color);
     }
-    /*.footer p {
-        color: var(--white-color);
-    }*/
+    .contact-item:not(:last-child){
+        margin-bottom: 9px;
+    }
     .address {
         font-style: normal;
         line-height: 1.71;
@@ -309,6 +307,9 @@ margin: -15px;
 
    
     /*meny in portfolio*/
+    .page-header.portfolio {
+        border: 1px solid #ECECEC;
+    }
     .grid-portfolio {
         padding-bottom: 50px;
     }    
@@ -351,13 +352,14 @@ margin: -15px;
     flex-wrap: wrap;
     }
     .portfolio-item{
-        width: calc((100% - 90px)/3);
+        width: calc((100% - 60px)/3);
         margin-right: 30px;
         margin-bottom: 30px;
         
         border: 1px solid #EEEEEE;
         background-color: var(--white-color);
         border-radius: 4px;
+        box-sizing: border-box;
 
     }
     .portfolio-item:nth-child(3n) {
@@ -369,7 +371,7 @@ margin: -15px;
     }
     
     .portfolio-post {
-        margin-top: 4PX;
+        margin-top: 4px;
         color: var(--main-color);
         font-size: 16px;
         line-height: 1.87;
